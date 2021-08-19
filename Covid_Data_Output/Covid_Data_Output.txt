@@ -1,0 +1,60 @@
+Covid-19 Tweet Data Results
+
+Statistical Analysis
+
+I-Explain
+0.7933333333333333 0.016526979239792107 0.83
+R-Explain
+0.6133333333333334 0.08495129631229756 0.77
+M-Explain
+0.6 0.012096502347631273 0.69
+SHAP-Explain
+0.3333333333333333 0.013769809170726694 0.44
+LIME-Explain
+0.46 0.016032512054745787 0.54
+
+
+Varying Models
+Word Explanation Accuracy our Approach Varying Models
+
+[0.8975, 0.9025000000000001, 0.89, 0.9075, 0.8875]
+Relational Explanation Accuracy our Approach Varying Models
+
+[0.8775000000000001, 0.8725, 0.81, 0.77, 0.87]
+Word Explanation Accuracy Randomly Varying Models
+
+[0.59, 0.635, 0.6174999999999999, 0.6475, 0.6525]
+Relational Explanation Accuracy Randomly Varying Models
+
+[0.6950000000000001, 0.6775, 0.555, 0.725, 0.675]
+
+
+Varying Clusters
+
+
+Varying Clusters
+Word Explanation Accuracy our Approach Varying Clusters
+
+[0.665, 0.65825, 0.7725, 0.7725, 0.775]
+Relational Explanation Accuracy our Approach Varying Clusters
+
+[0.8674999999999999, 0.835, 0.8275, 0.795, 0.8625]
+Word Explanation Accuracy Randomly Varying Clusters
+
+[0.5, 0.5675, 0.5625, 0.59, 0.5725]
+Relational Explanation Accuracy Randomly Varying Clusters
+
+[0.7124999999999999, 0.72, 0.705, 0.69, 0.7424999999999999]
+Word Explanation Accuracy Full MLN
+
+0.51
+Relational Explanation Accuracy Full MLN
+
+0.75
+Word Explanation Accuracy SHAP
+
+0.29
+Word Explanation Accuracy LIME
+
+0.27
+  
