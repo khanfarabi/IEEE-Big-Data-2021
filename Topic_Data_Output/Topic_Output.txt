@@ -1,0 +1,75 @@
+20Newsgroup_Topic Data Results
+
+Statistical Analysis
+
+I-Explain
+0.7066666666666667 0.00886570893752359 0.75
+R-Explain
+0.5866666666666667 0.043002376668705135 0.66
+M-Explain
+0.6233333333333333 0.014678910176144795 0.67
+SHAP-Explain
+0.39 0.023203018150734275 0.54
+LIME-Explain
+0.5333333333333333 0.010881063018485989 0.56
+
+
+Varying Models
+Word Explanation Accuracy our Approach Varying Models
+
+[0.665, 0.7075, 0.71, 0.745, 0.7224999999999999]
+Relational Explanation Accuracy our Approach Varying Models
+
+[0.84, 0.8674999999999999, 0.89, 0.865, 0.8925000000000001]
+Word Explanation Accuracy Randomly Varying Models
+
+[0.42, 0.395, 0.4675, 0.4875, 0.37]
+Relational Explanation Accuracy Randomly Varying Models
+
+[0.7075, 0.6675, 0.6725, 0.6174999999999999, 0.7375]
+No handles with labels found to put in legend.
+
+
+Varying Clusters
+Word Explanation Accuracy our Approach Varying Clusters
+
+[0.65, 0.6425, 0.705, 0.69, 0.6799999999999999]
+Relational Explanation Accuracy our Approach Varying Clusters
+
+[0.795, 0.8075, 0.8075, 0.8025, 0.89]
+Word Explanation Accuracy Randomly Varying Clusters
+
+[0.3975, 0.385, 0.4, 0.38, 0.385]
+Relational Explanation Accuracy Randomly Varying Clusters
+
+[0.76, 0.755, 0.725, 0.725, 0.71]
+Word Explanation Accuracy Full MLN
+
+0.49
+Relational Explanation Accuracy Full MLN
+
+0.61
+Word Explanation Accuracy SHAP
+
+0.09
+Word Explanation Accuracy LIME
+
+0.16
+
+
+
+I-Explain Total Execution Time
+
+23.46 minutes
+R-Explain Execution Time
+
+30.79 minutes
+M-Explain Execution Time
+
+36.16 minutes
+SHAP-Explain Execution Time
+
+29.42 minutes
+LIME-Explain Execution Time
+
+30.82 minutes
