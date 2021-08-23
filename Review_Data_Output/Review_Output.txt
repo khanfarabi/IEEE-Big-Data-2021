@@ -1,0 +1,77 @@
+Yelp Hotel Review Data Results
+
+Statistical Analysis
+
+I-Explain
+0.8233333333333334 0.016404923962543873 0.84
+R-Explain
+0.5466666666666666 0.017204320981563697 0.58
+M-Explain
+0.6 0.015110444854930414 0.69
+SHAP-Explain
+0.53 0.019447854685045535 0.58
+LIME-Explain
+0.5533333333333333 0.02153909106135868 0.61
+
+
+Varying Models
+Word Explanation Accuracy our Approach Varying Models
+
+[0.7075, 0.7224999999999999, 0.73, 0.7324999999999999, 0.7424999999999999]
+Relational Explanation Accuracy our Approach Varying Models
+
+[0.725, 0.7375, 0.76, 0.775, 0.7825]
+Word Explanation Accuracy Randomly Varying Models
+
+[0.3125, 0.3125, 0.32, 0.3225, 0.3175]
+Relational Explanation Accuracy Randomly Varying Models
+
+[0.5125, 0.5475000000000001, 0.55, 0.5475000000000001, 0.555]
+No handles with labels found to put in legend.
+
+
+Varying Clusters
+Word Explanation Accuracy our Approach Varying Clusters
+
+[0.6875, 0.69775, 0.7124999999999999, 0.72, 0.7375]
+Relational Explanation Accuracy our Approach Varying Clusters
+
+[0.7, 0.7224999999999999, 0.7275, 0.75, 0.7725]
+Word Explanation Accuracy Randomly Varying Clusters
+
+[0.315, 0.305, 0.3125, 0.315, 0.3275]
+Relational Explanation Accuracy Randomly Varying Clusters
+
+[0.5025, 0.52, 0.5275000000000001, 0.555, 0.5575]
+Word Explanation Accuracy Full MLN
+
+0.37
+Relational Explanation Accuracy Full MLN
+
+0.63
+
+
+Word Explanation Accuracy SHAP
+
+0.16
+Word Explanation Accuracy LIME
+
+0.24
+
+
+
+I-Explain Total Execution Time
+
+29.86 minutes
+R-Explain Execution Time
+
+33.49 minutes
+M-Explain Execution Time
+
+40.29 minutes
+SHAP-Explain Execution Time
+
+32.52 minutes
+LIME-Explain Execution Time
+
+35.72 minutes
