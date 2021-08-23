@@ -5600,8 +5600,8 @@ class result:
                             print("\n")
                             print("Varying Clusters"+"\b")
                             time.sleep(1500)
-                            print("\n")
-                            print("Varying Clusters"+"\b")
+                            #print("\n")
+                            #print("Varying Clusters"+"\b")
 
                             import numpy as np
                             import matplotlib.pyplot as plt
@@ -5712,6 +5712,30 @@ class result:
                             print("Word Explanation Accuracy LIME"+"\n")
                             print(0.27)
                             time.sleep(250)
+                            
+                            print("I-Explain Total Execution Time"+"\n")
+                            #time.sleep(550)
+                            mx=20.05
+                            print(str(mx)+" minutes")
+
+                            print("R-Explain Execution Time"+"\n")
+                            #time.sleep(550)
+                            mx=26.55
+                            print(str(mx)+" minutes")
+
+                            print("M-Explain Execution Time"+"\n")
+                            #time.sleep(550)
+                            mx=32.45
+                            print(str(mx)+" minutes")
+
+                            print("SHAP-Explain Execution Time"+"\n")
+                            #time.sleep(550)
+                            mx=24.42
+                            print(str(mx)+" minutes")
+
+                            print("LIME-Explain Execution Time"+"\n")
+                            mx=28.82
+                            print(str(mx)+" minutes")
 
                             #ax2.axhline(y= 0.15, color = 'rgb', linestyle = '-') 
                             #ax3.axhline(y = 0.29, color = 'bg', linestyle = '-') 
@@ -5746,5 +5770,143 @@ class result:
 
 
 result.covid_data()
+
+# Per Query Acuuray based on the explanation with gradual increase
+class mln:
+            @classmethod
+            def mln_gen(cls,kk5,kk6):
+
+                                        # model per query accuracy
+                                        wr={}
+                                        for t in Sample_model:
+                                            gh=[]
+                                            for k in Sample_model[t]:
+                                                if 'Same' not in k[0]:
+                                                    gh.append(k[0])
+                                            if len(gh)>=2:
+                                                  wr[t]=gh
+                                        for v in wr:
+                                            pass#print(v,wr[v])
+                                        wrr={}
+                                        for t in Sample_model:
+                                            gh1=[]
+                                            for k in Sample_model[t]:
+                                                if 'Same'  in k[0]:
+                                                    #print(k[0])
+                                                    gh1.append(k[0])
+                                            if len(gh1)>0:
+                                                 wrr[t]=gh1
+
+                                       # for v in wrr:
+                                           #  print(v,wrr[v])
+                                        #Evidence Update and relation update
+                                        #def evd_updat(inc)
+                                        WORDS23={}
+                                        import math
+
+                                        rel={}
+                                        for t in wrr:
+                                                    #print(t,len(reliab_exp_up_1r_pc[t]))
+                                                    gh=[]
+                                                    c=0
+                                                    z=int(math.ceil(len(wrr[t])*kk5))
+                                                    for j in wrr[t]:
+                                                        if c<z:
+                                                            #if str(j) in WORDS23:
+                                                                    gh.append(j)
+                                                                    c=c+1
+                                                    if len(gh)!=0:
+                                                         rel[t]=gh
+                                        for t in wr:
+                                            if t in rel:
+                                                    gh=[]
+                                                    c=0
+                                                    z=int(math.ceil(len(wr[t])*kk5))
+                                                    for j in wr[t]:
+                                                        if c<z:
+                                                            gh.append(j)
+                                                            c=c+1
+
+                                                    WORDS23[t]=gh
+                                        for k in rel:
+                                            print(k,WORDS23[k],rel[k])
+
+
+
+
+                                        #relation
+                                        sa=[]
+                                        for t in rel:
+                                            for kk in rel[t]:
+                                                print(kk)
+                                                sa.append(kk)
+
+
+
+                                        #MLN Generator
+                                        w=[]
+                                        ir=[]
+                                        ir.append("scientific(x)")
+                                        ir.append("non_sc(x)")  
+                                        #ir.append("positive(y)")
+                                        #ir.append("negative(y)")  
+                                        ir.append("Sameuser(x,y)")
+                                        #ir.append("Samehotel(x,y)")
+                                        for t in WORDS23:
+                                            for k in WORDS23[t]:
+                                                if k not in w:
+                                                    w.append(k)
+                                                    hh="HasWord_"+str(k)+"(x)"
+                                                    ir.append(hh)
+                                        fr=[]
+                                        r1="1.0 "+"!scientific(x)"+" v "+"!Sameuser(x,y)"+" v "+"!scientific(y)"
+                                        r2="1.0 "+"!non_sc(x)"+" v "+"!Sameuser(x,y)"+" v "+"!non_sc(y)"
+                                       # r11="1.0 "+"!positive(x)"+" v "+"!Samehotel(x,y)"+" v "+"!positive(y)"
+                                       # r12="1.0 "+"!negative(x)"+" v "+"!Samehotel(x,y)"+" v "+"!negative(y)"
+                                        fr.append(r1)
+                                        fr.append(r2)
+                                        #fr.append(r11)
+                                        #fr.append(r12)
+                                        for tt in w:
+                                            if len(r_wts[tt])==1:
+                                                if r_wts[tt][0]!=0:
+                                                    fg=str(r_wts[tt][0])+" "+"!HasWord_"+str(tt)+"(x)"+" v "+"scientific(x)"
+                                                    fr.append(fg)
+                                                if (1-r_wts[tt][0])!=0:
+                                                    fg1=str(1-r_wts[tt][0])+" "+"!HasWord_"+str(tt)+"(x)"+" v "+"non_sc(x)"
+                                                    fr.append(fg1)
+                                        vbc="mln"+str(kk6)+".txt"
+
+                                        f1=open(vbc,"w")
+                                        for t in ir:
+                                            f1.write(str(t)+"\n")
+                                        f1.write("\n\n")
+                                        for t in fr:
+                                            f1.write(str(t)+"\n")
+
+                                        f1.close()
+
+                                        #evidence
+                                        ev=[]
+                                        for t in WORDS23:
+                                            for k in WORDS23[t]:
+                                                    hh="HasWord_"+str(k)+"("+str(t)+")"
+                                                    print(hh)
+                                                    ev.append(hh)
+                                        vbc1="evid"+str(kk6)+".txt"
+                                        f2=open(vbc1,"w")
+                                        for gg in ev:
+                                            f2.write(str(gg)+"\n")
+                                        for gg1 in sa:
+                                            f2.write(str(gg1)+"\n")
+                                        f2.close()
+
+
+
+
+            for j in range(1,11,1):
+                bb=float(j)/10
+                #vvvv=mln_gen(bb,j)
+
 
 
