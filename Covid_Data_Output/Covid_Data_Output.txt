@@ -57,4 +57,21 @@ Word Explanation Accuracy SHAP
 Word Explanation Accuracy LIME
 
 0.27
+
+
+I-Explain Total Execution Time
+
+20.05 minutes
+R-Explain Execution Time
+
+26.55 minutes
+M-Explain Execution Time
+
+32.45 minutes
+SHAP-Explain Execution Time
+
+24.42 minutes
+LIME-Explain Execution Time
+
+28.82 minutes
   
