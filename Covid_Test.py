@@ -1699,7 +1699,7 @@ class operation:
                     utils = rpackages.importr('utils')
                     utils.chooseCRANmirror(ind=1)
                     # Install packages
-                    packnames = ('TopKLists', 'Borda')
+                    packnames = ('TopKLists', 'CEMC')
                     utils.install_packages(StrVector(packnames))
                     packnames = ('data(TopKSpaceSampleInput)')
                     utils.install_packages(StrVector(packnames))
@@ -2319,8 +2319,8 @@ class operation:
                                         c=0
                                         gh.append(t1)
                                         ll=reliab_exp_up[t1]
-                                        b=r['Borda'](ll,k=30)#agg.borda(ll)
-                                        for t in b[0][0]:
+                                        b=r['CEMC'](ll,k=30)#agg.CEMC(ll)
+                                        for t in b[0]:
                                             if c<T:
                                                 gh.append(t)
                                                 c=c+1
@@ -2475,8 +2475,8 @@ class operation:
                                                     gh.append(t1)
                                                     ll=reliab_exp_up2[t1]
                                                     try:
-                                                        b=r['Borda'](ll,k=10)#agg.borda(ll)
-                                                        for t in b[0][0]:
+                                                        b=r['CEMC'](ll,k=10)#agg.CEMC(ll)
+                                                        for t in b[0]:
                                                             if c<T:
                                                                 gh.append(t)
                                                                 c=c+1
@@ -2610,7 +2610,7 @@ class operation:
                     utils = rpackages.importr('utils')
                     utils.chooseCRANmirror(ind=1)
                     # Install packages
-                    packnames = ('TopKLists', 'Borda')
+                    packnames = ('TopKLists', 'CEMC')
                     utils.install_packages(StrVector(packnames))
                     packnames = ('data(TopKSpaceSampleInput)')
                     utils.install_packages(StrVector(packnames))
@@ -3232,8 +3232,8 @@ class operation:
                                         c=0
                                         gh.append(t1)
                                         ll=reliab_exp_up[t1]
-                                        b=r['Borda'](ll,k=30)#agg.borda(ll)
-                                        for t in b[0][0]:
+                                        b=r['CEMC'](ll,k=30)#agg.CEMC(ll)
+                                        for t in b[0]:
                                             if c<T:
                                                 gh.append(t)
                                                 c=c+1
@@ -3388,8 +3388,8 @@ class operation:
                                                     gh.append(t1)
                                                     ll=reliab_exp_up2[t1]
                                                     try:
-                                                        b=r['Borda'](ll,k=10)#agg.borda(ll)
-                                                        for t in b[0][0]:
+                                                        b=r['CEMC'](ll,k=10)#agg.CEMC(ll)
+                                                        for t in b[0]:
                                                             if c<T:
                                                                 gh.append(t)
                                                                 c=c+1
@@ -4106,8 +4106,8 @@ class operation:
                                         c=0
                                         gh.append(t1)
                                         ll=reliab_exp_up[t1]
-                                        b=r['Borda'](ll,k=30)#agg.borda(ll)
-                                        for t in b[0][0]:
+                                        b=r['CEMC'](ll,k=30)#agg.CEMC(ll)
+                                        for t in b[0]:
                                             if c<T:
                                                 gh.append(t)
                                                 c=c+1
@@ -4262,8 +4262,8 @@ class operation:
                                                     gh.append(t1)
                                                     ll=reliab_exp_up2[t1]
                                                     try:
-                                                        b=r['Borda'](ll,k=10)#agg.borda(ll)
-                                                        for t in b[0][0]:
+                                                        b=r['CEMC'](ll,k=10)#agg.CEMC(ll)
+                                                        for t in b[0]:
                                                             if c<T:
                                                                 gh.append(t)
                                                                 c=c+1
@@ -4397,7 +4397,7 @@ class operation:
                     utils = rpackages.importr('utils')
                     utils.chooseCRANmirror(ind=1)
                     # Install packages
-                    packnames = ('TopKLists', 'Borda')
+                    packnames = ('TopKLists', 'CEMC')
                     utils.install_packages(StrVector(packnames))
                     packnames = ('data(TopKSpaceSampleInput)')
                     utils.install_packages(StrVector(packnames))
@@ -4992,8 +4992,8 @@ class operation:
                                         c=0
                                         gh.append(t1)
                                         ll=reliab_exp_up[t1]
-                                        b=r['Borda'](ll,k=30)#agg.borda(ll)
-                                        for t in b[0][0]:
+                                        b=r['CEMC'](ll,k=30)#agg.CEMC(ll)
+                                        for t in b[0]:
                                             if c<T:
                                                 gh.append(t)
                                                 c=c+1
@@ -5148,8 +5148,8 @@ class operation:
                                                     gh.append(t1)
                                                     ll=reliab_exp_up2[t1]
                                                     try:
-                                                        b=r['Borda'](ll,k=10)#agg.borda(ll)
-                                                        for t in b[0][0]:
+                                                        b=r['CEMC'](ll,k=10)#agg.CEMC(ll)
+                                                        for t in b[0]:
                                                             if c<T:
                                                                 gh.append(t)
                                                                 c=c+1
